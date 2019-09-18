@@ -7,6 +7,7 @@
 
 ### Alpine Linux:  
 __Cloud Example:__ Docker provides an image based on Alpine Linux that allows you to have a Docker Container with that Operating System.  
+### Amazon Simple Storage Service (S3):  
 ### Ansible:  
 ### Apache:   
 ### Aurora:  
@@ -49,6 +50,7 @@ __Description:__ A lightweight Linux Operating System that can be run in contain
 ### CoreOS Rocket (rkt):  
 ### CoreOS Tectonic: 
 __Description:__ A platform that provides users with Kuberentes that's running CoreOs technologies.  
+### Create Read Update Delete (CRUD):  
 ### CRI-O: 
 __Description:__ A Container Runtime that can run any container that follows the Open Container Initiative (OCI) guidelines. CRI-O stands for **C**ontainer **R**untime **I**nterface for **O**pen Container Initiative. [src](https://www.redhat.com/en/blog/introducing-cri-o-10)  
 ### Debian: 
@@ -74,6 +76,8 @@ __Description:__ Lasting for a very short time.
 __Cloud Example:__ Kubernetes pods are ephemeral because they can easily be deleted (Ex: If all containers in the pod crash then the pod will be removed from the cluster). [src](https://www.google.com/search?q=define+ephemeral&oq=define+ephemeral&aqs=chrome..69i57j0l5.2535j1j9&sourceid=chrome&ie=UTF-8)  
 ### Etcd:  
 ### Eventstore:  
+### File System (NAS):  
+__Cloud Relevance:__ As capacity grows (scaling) File Systems lack in performance when compared to other models like Object Storage - you have limited space in your filesystem. 
 ### Flocker:  
 ### Git:  
 __Description:__ A Version Control System (VCS).  
@@ -115,11 +119,15 @@ __Description:__ An Open Source Service Mesh provided by Google Cloud. [src](htt
 ### Kernel: 
 __Description:__ The Kernel is the interface between applications, CPU/memory, and other hardware I/O devices. It runs behind the scenes when you interact with your computer and its Operating System. The Kernel is responsible for managing processes for applications, interacting with memory, managing memory, allocating memory, managing devices through device drivers, and executing system calls (sort of like commands you enter in the terminal). [src](https://www.techopedia.com/definition/3277/kernel)  
 ### Kind:  
-### Knative:  
+### Knative: 
+__Description:__ An Open Source suite of tools for Kubernetes that make it easier for developers to use serverless applications in their cluster and simplify management/configuration of Kubernetes. It has three main components: Build - turn source code into containers that can be run in the cluster; Serve - configure and scale your containers, and route networking to a subset of your containers; Event - it can perform functions based on events it observes. [src](https://www.ibm.com/cloud/learn/knative) Knative runs in your cluster, and uses CRDs and listens to API events.  
+__Cloud Examples:__ Autoscaling workloads; Building containers from source code; Stateless computing; Installing dependencies; Configuring networking rules to route traffic; Generating config files; Setting up logging; and more...
+__Use Case:__ CI/CD Pipeline. Instead of maintining your own custom CI/CD Pipeline architecture with a tool like Jenkins, you can use the framework provided by Knative. By defining a set of Knative's CRDs (like Pipeline or Tasks) you can configure it to execute your CI/CD workflow.  
 ### Kubernetes:  
 ### Kubernetes Cluster Role:  
 ### Kubernetes Cluster Role Binding:  
 ### Kubernetes Container Runtime Interface (CRI):  
+### Kubernetes Custom Resource Definition (CRD):  
 ### Kubernetes Endpoint:  
 ### Kubernetes Service: 
 __Description:__ A Service is a Kubernetes REST Resource that specifies a policy (or rules) for directing networking data. [src](https://medium.com/cloud-heroes/the-kubernetes-service-basics-2756cb6e455f)  
@@ -152,8 +160,12 @@ __Description:__ "The microservices architecture is a design approach to build a
 ### Network File System (NFS):  
 __Cloud Example:__ Amazon Elastic File System (EFS), Google Cloud Filestore
 ### Nginx:  
-### Node: 
+### Node:  
 __Description:__ A physical system in a computer network.  
+### NoSQL:  
+### Object Store: 
+__Description:__ Object storage (also known as object-based storage) is a computer data storage architecture that manages data as objects, as opposed to other storage architectures like file systems which manages data as a file hierarchy, and block storage which manages data as blocks within sectors and tracks. Each object typically includes the data itself, a variable amount of metadata, and a globally unique identifier. [src](https://en.wikipedia.org/wiki/Object_storage)  
+__Cloud Relevance:__ This storage is beneficial for scalability - since the objects are stored in a flat address space, you can simply add more nodes to get more room.  
 ### Open Container Initiative (OCI):  
 ### Openshift Route:  
 ### Openstack:  
@@ -164,6 +176,7 @@ __Description:__ The Operating System is the primary software on your computer t
 ### Peleton:  
 ### Pivotal:  
 ### Pivotal's Cloud Foundry:  
+### Podman:  
 ### Prometheus:  
 ### Prow:  
 ### Publish Subscribe (Pub/Sub) Patter:  
@@ -173,15 +186,21 @@ __Description:__ The Operating System is the primary software on your computer t
 __Description:__ A company with various cloud products that was bought by IBM.  
 ### RedHat's Openshift: 
 __Description:__ RedHat's container platform that runs Kubernetes. Essentially it's Kubernetes with extra features. [src](https://www.openshift.com/learn/what-is-openshift)  
+### Relational Database:  
 ### Role Based Access Control (RBAC): 
 __Description:__ A security protocol that restricts access to resources by giving Roles to users. A Role is allowed to do certain things. Thus, what a user can do is based on what role it has. [src](https://digitalguardian.com/blog/what-role-based-access-control-rbac-examples-benefits-and-more)  
+### Serverless Computing:  
+__Desription:__ A cloud-computing execution model in which the cloud provider runs the server, and dynamically manages the allocation of machine resources. [src](https://en.wikipedia.org/wiki/Serverless_computing)  
+__Cloud Example:__ You give the cloud provider your code. When the cloud provider sees a request to access your code it will then allocate resources to run your code. When nobody is accessing your code anymore it will remove the resources. 
 ### Service Mesh: 
 __Description:__ An Infrastructure Layer for microservices. [src](https://medium.com/cloud-heroes/cloud-simplified-service-mesh-basics-542fef25024d)  
 ### Service Mesh Side Car: 
 __Description:__ An implementation of a Service Mesh where every unit gets a "Side Car" that handles networking for the unit that it's paired with.  
+### Source of Truth:  
 ### SSL Certificates: 
 __Description:__ "SSL certificates form the core of trust on the web by assuring the identity of websites. This trust is built by digitally binding a cryptographic key to an organization’s identity. An SSL certificate will bind domain names to server names, and company names to locations. This ensures that if you go to your bank’s web site, for example, you know for sure it is your bank, and you are not giving out your information to a phishing scam." (where a certificate is a file that contains a Public Key) [src](https://blog.cloudflare.com/introducing-cfssl/)  
 __Cloud Example:__ These are commonly used in the Cloud when networking between components. You could have a container that generates certificates for you application to use.  
+### SQL:  
 ### Stateless:  
 ### Systemd:  
 ### S3 Bucket:  
