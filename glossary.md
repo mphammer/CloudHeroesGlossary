@@ -91,6 +91,7 @@
 * __Cloud Example:__ Your team can collaborate together using a remote GitLab repo. When you push/submit changes to the repo, CI/CD automation can be triggered that tests your software in cloud environments like Kubernetes and Openshift.  
 ### Golang:  
 ### Google Cloud Platform (GCP):  
+### Google Cloud Storage (GCS):  
 ### Google Kubernetes Engine:  
 ### Hashicorp:  
 ### Heroku:  
@@ -132,11 +133,16 @@
 ### Kubernetes Container Runtime Interface (CRI):  
 ### Kubernetes Custom Resource Definition (CRD):  
 ### Kubernetes Endpoint:  
+### Kubernetes Init Containers:  
+* __Description:__ Specialized containers that run before app containers in a Pod. Init containers can contain utilities or setup scripts not present in an app image. A Pod can have multiple containers running apps within it, but it can also have one or more init containers, which are run before the app containers are started. Each init container must successfully run to completion before the next one can start. If a Pod’s init container fails, Kubernetes repeatedly restarts the Pod until the init container succeeds. Just like normal containers they are declared in the Pod's specification file.  
+* __Use Cases:__ Wait for a Service to be created. Register the Pod with a remote server. Wait for some time before starting the app container. Clone a Git repository into a Volume. Place values into a configuration file and run a template tool to dynamically generate a configuration file for the main app container. Securely run utilities that would make an app container image less secure.  
 ### Kubernetes Liveness Probe:   
-* __Description:__ This is a configuration in a Pod's YAML that tells kublet how to check if the Pod is healthy. For example, it can require that every 5 seconds the kublet should execute a command in the container, perform an HTTP request to the server in a containter, or do a TCP request to the container. The kublet will recieve a success or failure response. If it receives a failure response it will then kill the container. [src](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/)   
+* __Description:__ This is a configuration in a Pod's YAML that tells kublet how to check if the Pod is healthy. For example, it can require that every 5 seconds the kublet should execute a command in the container, perform an HTTP request to the server in a containter, or do a TCP request to the container. The kublet will recieve a success or failure response. If it receives a failure response it will then kill the container. [src](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/) [src](https://cloud.google.com/blog/products/gcp/kubernetes-best-practices-setting-up-health-checks-with-readiness-and-liveness-probes)     
+* __Use Cases:__ If your containers are running but are in a deadlock, a liveness probe can tell Kubernetes to kill the pod.  
 ### Kubernetes Readiness Probe:  
-* __Description:__ This is a configuration in a Pod to tell Kubernetes how to know when a Pod is ready to receive networking traffic from Kubernetes Services. The check can be through executing a command in the containerr, performing an HTTP request to the server in the conatiner, or a TCP request.     
-* __Use Cases:__ If your application is currently processing a large amount of data you may not want to keep sending network traffic to it until it's finished. If your application depends on external services you may not want to send it network traffic yet. [src](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/)  
+* __Description:__ This is a configuration in a Pod YAML to tell Kubernetes how to know when a Pod is ready to receive networking traffic from Kubernetes Services. The check can be through executing a command in the containerr, performing an HTTP request to the server in the conatiner, or a TCP request.     
+* __Relevance:__ Your Pod is considered ready once all of its containers are running. But what if even though the container is running, your Pod needs some more time to set up before receiving traffic. Readiness allow you to create custom readiness checks instead of just looking at if the containers are running.  
+* __Use Cases:__ If your application is currently processing a large amount of data you may not want to keep sending network traffic to it until it's finished. If your application depends on external services you may not want to send it network traffic yet. If you application takes a few minutes to actually start running. [src](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/) [src](https://cloud.google.com/blog/products/gcp/kubernetes-best-practices-setting-up-health-checks-with-readiness-and-liveness-probes)  
 ### Kubernetes Role:  
 ### Kubernetes Role Binding:  
 ### Kubernetes Service: 
@@ -188,6 +194,16 @@
 ### Pivotal:  
 ### Pivotal's Cloud Foundry:  
 ### Podman:  
+### Port:  
+* __Description:__ A Port is a location on a computer that information is sent/received. [src](https://www.webopedia.com/quick_ref/portnumbers.asp)  
+* __Note:__ A port has different meanings. For example a port can be a physical plug at the back of your computer, a I/O port, transfering (porting) data from one system to another, or a network/software port. Here we are looking at a network/software port. [src](https://www.computerhope.com/jargon/p/port.htm)  
+* __Stuff You Should Know:__ 
+  * Ports 0–1023 are system or well-known ports. 
+  * Ports 1024–49151 are user or registered ports. 
+  * Ports above 49151 as private ports. 
+  * Port 80 is for HTTP
+  * Port 8080 is an alternative port for HTTP
+  * Port 443 os for HTTPS
 ### Prometheus:  
 ### Prow:  
 ### Publish Subscribe (Pub/Sub) Patter:  
